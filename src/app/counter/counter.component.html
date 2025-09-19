@@ -1,0 +1,27 @@
+<h1>Event In Angular</h1>
+
+<div
+(click)="handleEvent($event)" 
+style="background-color: green;width: 100px;height:100px;"></div>
+
+<div
+(mouseleave)="handleEvent($event)" 
+style="background-color: red;width: 100px;height:100px;"></div>
+
+<div
+(mouseenter)="handleEvent($event)" 
+style="background-color: black;width: 100px;height:100px;"></div>
+
+<!-- Input Field -->
+
+<h1>Username is {{displayName}}</h1>
+<input type="text" (input)="getName($event)" placeholder="Enter Username" value="{{name}}"/>
+<br>
+<br>
+<button (click)="showName()">Get Value</button>
+<button (click)="setName()">Set Name</button>
+<hr>
+<h1>Email:{{email}}</h1>
+<input type="text" placeholder="Enter Email" #emailField value="{{email}}"/>
+<button (click)="getEmail(emailField.value)">Get Email</button>
+<button (click)="setEmail()">Set Email</button>

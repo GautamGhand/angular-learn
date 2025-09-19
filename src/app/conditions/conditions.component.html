@@ -1,0 +1,101 @@
+<h1>If Else | Control Flow</h1>
+
+<button (click)="hide()">Hide Div</button>
+<button (click)="show()">Show Div</button>
+<button (click)="toggle()">Toggle Div</button>
+<br>
+<br>
+
+@if(display){
+<div style="width: 200px;height: 200px;background-color: green;">
+</div>
+}
+
+<hr>
+
+<button (click)="toggletwoDiv()">{{toggleDiv?'show red div':'show gold div'}}</button>
+
+@if(toggleDiv){
+<div style="background-color: gold;width: 200px;height: 200px;">
+
+</div>
+}
+@else{
+<div style="background-color: red;width: 200px;height: 200px;">
+
+</div>
+}
+
+<hr>
+<h1>Else if</h1>
+<button (click)="handleColor(1)">Red</button>
+<button (click)="handleColor(2)">Blue</button>
+<button (click)="handleColor(3)">Green</button>
+<button (click)="handleColor(10)">Other</button>
+<input type="text" (input)="handleInput($event)" />
+@if(color==1){
+<div style="background-color: red;width: 100px;height: 100px;">
+</div>
+}
+@else if(color==2){
+<div style="background-color: blue;width: 100px;height: 100px;">
+</div>
+}
+@else if(color==3){
+<div style="background-color: green;width: 100px;height: 100px;">
+</div>
+}
+@else{
+<div style="background-color: black;width: 100px;height: 100px;">
+</div>
+}
+<hr>
+<h1>Switch In Angular</h1>
+
+@switch(color){
+@case(1){
+<h1 style="background-color: red;">Red Color</h1>
+}
+@case(2){
+<h1 style="background-color: blue;">Blue Color</h1>
+}
+@case(3){
+<h1 style="background-color: green;">Green Color</h1>
+}
+@default{
+<h1 style="background-color: black;">Black Color</h1>
+}
+}
+
+<hr>
+<h1>For Loop In Angular</h1>
+
+@for(user of users; track user){
+    <!-- @if($first || $last){
+        <h2 style="background-color: red;">{{user}}</h2>
+    }@else{
+        <h2>{{user}}</h2>
+    } -->
+
+    @if($even){
+         <h2 style="background-color: lightgreen;">{{user}}</h2>
+    }@else{
+        <h2 style="background-color: #777;">{{user}}</h2>
+    }
+
+    <!-- <h1>{{$count}}</h1> -->
+}
+@empty(){
+    <h1>No Records Found</h1>
+}
+
+<hr>
+
+@for(student of students;track student;let id=$index){
+<div>{{id+1}}</div>
+<!-- <div>Count:{{count}}</div> -->
+<div>Name:{{student.name}}</div>
+<div>Email:{{student.email}}</div>
+<div>Age:{{student.age}}</div>
+<button (click)="getName(student.name)">Get Name</button>
+}

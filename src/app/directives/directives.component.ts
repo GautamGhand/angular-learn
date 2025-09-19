@@ -1,14 +1,15 @@
-import { NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-directives',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf,NgFor],
   templateUrl: './directives.component.html',
   styleUrl: './directives.component.css'
 })
 export class DirectivesComponent {
   bgColor:string='red';
   show:boolean=false;
+  students=["Anil","Sam","Peter","Vinay","Bruce"];
 }

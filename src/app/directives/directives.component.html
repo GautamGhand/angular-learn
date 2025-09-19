@@ -1,5 +1,3 @@
-
-
 <h1>Directives in Amgular</h1>
 
 
@@ -15,5 +13,24 @@
     </li>
 </ul>
 
-
-
+<h2>Student Data</h2>
+<div>
+    <table border="1" cellpadding="5">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let studentData of studentsData">
+                <td>{{ studentData.id }}</td>
+                <td>{{ studentData.name }}</td>
+                <td>{{ studentData.age }}</td>
+                <td>{{ studentData.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

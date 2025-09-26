@@ -7,6 +7,8 @@ import { EffectComponent } from './effect/effect.component';
 import { BindingComponent } from './binding/binding.component';
 import { TodolistComponent } from './todolist/todolist.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { RoutingComponent } from './routing/routing.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
@@ -36,6 +38,14 @@ const routes: Routes = [
   {
     path: 'directives',
     component: DirectivesComponent,
+  },
+  {
+    path: 'routing',
+    component: RoutingComponent,
+  },
+    {
+    path: '',
+    component: HomeComponent,
   },
 ];
 

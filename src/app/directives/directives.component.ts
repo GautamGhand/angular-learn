@@ -1,17 +1,19 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-directives',
   standalone: true,
-  imports: [NgIf, NgFor],
+  imports: [NgIf, NgFor,NgSwitch,NgSwitchCase,NgSwitchDefault],
   templateUrl: './directives.component.html',
   styleUrl: './directives.component.css',
 })
 export class DirectivesComponent {
   bgColor: string = 'red';
-  show: boolean = false;
+  show: boolean = true;
   students = ['Anil', 'Sam', 'Peter', 'Vinay', 'Bruce'];
+  login:boolean=false;
+  color:string='black';
   studentsData:{id:number,name:string,age:number,email:string}[] = [
     {
       id:1,
@@ -32,4 +34,8 @@ export class DirectivesComponent {
       email: 'gautam@sidhu.com',
     },
   ];
+
+  changeColor(val:string){
+    this.color=val;
+  }
 }

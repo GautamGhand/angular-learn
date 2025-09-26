@@ -34,3 +34,35 @@
         </tbody>
     </table>
 </div>
+
+
+<h1>*ngIf Directive</h1>
+
+<h1 *ngIf="show">Heading</h1>
+
+
+<div *ngIf="login else elseBlock">
+    <a href="">Logout</a>
+</div>
+
+<ng-template #elseBlock>
+    <a href="">Login</a>
+</ng-template>
+
+
+<h1>ngSwitch</h1>
+
+<button (click)="changeColor('red')">Red</button>
+<button (click)="changeColor('green')">Green</button>
+<button (click)="changeColor('blue')">Blue</button>
+<button (click)="changeColor('yellow')">Yellow</button>
+<button (click)="changeColor('pink')">Pink</button>
+
+<div [ngSwitch]="color">
+    <h1 *ngSwitchCase="'red'" style="background-color: red;">Red Color</h1>
+    <h1 *ngSwitchCase="'green'" style="background-color: green;">Green Color</h1>
+    <h1 *ngSwitchCase="'blue'" style="background-color: blue;">Blue Color</h1>
+    <h1 *ngSwitchCase="'yellow'" style="background-color: yellow;">Yellow Color</h1>
+    <h1 *ngSwitchCase="'pink'" style="background-color: pink;">Pink Color</h1>
+    <h1 *ngSwitchDefault>No Color Match</h1>
+</div>

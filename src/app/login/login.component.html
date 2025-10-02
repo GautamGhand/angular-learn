@@ -1,0 +1,60 @@
+<div class="flex flex-col min-h-screen">
+    <header class="w-full">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4 border-b border-gray-200 dark:border-gray-800">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 text-primary">
+                        <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2L2 7V17L12 22L22 17V7L12 2ZM12 4.43L19.57 8.5L12 12.57L4.43 8.5L12 4.43ZM3.5 9.65L11 13.91V20.1L3.5 16.1V9.65ZM13 20.1V13.91L20.5 9.65V16.1L13 20.1Z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h1 class="text-2xl font-bold text-gray-900 dark:text-white">CampusConnect</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="flex-grow flex items-center justify-center">
+        <div class="w-full max-w-md p-8 space-y-8 bg-white dark:bg-background-dark rounded-lg shadow-md">
+            <div class="text-center">
+                <h2 class="mt-6 text-3xl font-bold text-gray-900 dark:text-white">
+                    Welcome Back!
+                </h2>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                    Sign in to continue to your portal.
+                </p>
+            </div>
+            <form action="#" class="mt-8 space-y-6" method="POST">
+                <div class="rounded-md shadow-sm -space-y-px">
+                    <div>
+                        <label class="sr-only" for="email-address">Username or Email</label>
+                        <input autocomplete="email"
+                            class="appearance-none rounded-none relative block w-full px-3 py-4 border border-gray-300 dark:border-gray-700 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark rounded-t-lg focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm"
+                            id="email-address" name="email" placeholder="Username or Email" required="" type="email" />
+                    </div>
+                    <div>
+                        <label class="sr-only" for="password">Password</label>
+                        <input autocomplete="current-password"
+                            class="appearance-none rounded-none relative block w-full px-3 py-4 border border-gray-300 dark:border-gray-700 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark rounded-b-lg focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm"
+                            id="password" name="password" placeholder="Password" required="" type="password" />
+                    </div>
+                </div>
+                <div class="flex items-center justify-end">
+                    <div class="text-sm">
+                        <a class="font-medium text-primary hover:text-primary/80" href="#">
+                            Forgot your password?
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <button
+                        class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                        type="submit">
+                        Login
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>

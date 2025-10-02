@@ -12,7 +12,7 @@ import { HeaderComponent } from './header/header.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HeaderComponent
+    HeaderComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

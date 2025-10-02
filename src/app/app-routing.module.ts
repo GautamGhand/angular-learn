@@ -9,6 +9,8 @@ import { TodolistComponent } from './todolist/todolist.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { RoutingComponent } from './routing/routing.component';
 import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -43,9 +45,17 @@ const routes: Routes = [
     path: 'routing',
     component: RoutingComponent,
   },
-    {
+  {
     path: '',
     component: HomeComponent,
+  },
+  {
+    path:'login',
+    component:LoginComponent
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
   },
 ];
 

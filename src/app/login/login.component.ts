@@ -13,6 +13,7 @@ export class LoginComponent {
   email:string="";
   password:string | number="";
   submitted=false;
+  show:boolean=false;
 
   onSubmit(form: NgForm) {
     this.submitted=true;

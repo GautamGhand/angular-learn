@@ -16,7 +16,7 @@
         </div>
     </header>
     <main class="flex-grow flex items-center justify-center">
-        <div class="w-full max-w-md p-8 space-y-8 bg-white dark:bg-background-dark rounded-lg shadow-md">
+        <div class="w-full max-w-md p-8 space-y-8 bg-white dark:bg-background-dark rounded-xl shadow-lg">
             <div class="text-center">
                 <h2 class="mt-6 text-3xl font-bold text-gray-900 dark:text-white">
                     Welcome Back!
@@ -25,19 +25,54 @@
                     Sign in to continue to your portal.
                 </p>
             </div>
-            <form action="#" class="mt-8 space-y-6" method="POST">
-                <div class="rounded-md shadow-sm -space-y-px">
+            <form class="mt-8 space-y-6" id="loginForm" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" novalidate>
+                <div class="space-y-4">
                     <div>
                         <label class="sr-only" for="email-address">Username or Email</label>
-                        <input autocomplete="email"
-                            class="appearance-none rounded-none relative block w-full px-3 py-4 border border-gray-300 dark:border-gray-700 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark rounded-t-lg focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm"
-                            id="email-address" name="email" placeholder="Username or Email" required="" type="email" />
+                        <div class="relative">
+                            <input autocomplete="email" [(ngModel)]="email" #emailRef="ngModel" required email
+                                class="peer block w-full px-3 py-4 border placeholder-gray-500 text-gray-900 rounded-lg focus:outline-none sm:text-sm"
+                                id="email-address" name="email" placeholder="Username or Email" type="email" [ngClass]="{
+                                        'border-gray-300 dark:border-gray-700': !(submitted && emailRef.invalid),
+                                        'border-danger focus:ring-danger focus:border-danger': (submitted && emailRef.invalid)
+                                    }" />
+                            <div *ngIf="submitted && emailRef.invalid"
+                                class="absolute inset-y-0 right-0 pr-3 flex items-center hidden peer-invalid:flex pointer-events-none">
+                                <span class="material-symbols-outlined text-danger">error</span>
+                            </div>
+                        </div>
+                        <div *ngIf="submitted && emailRef.invalid">
+                            <p *ngIf="emailRef.errors?.['required']" class="mt-2 text-sm text-danger error-message"
+                                id="email-error">Email is Required.</p>
+                            <p *ngIf="emailRef.errors?.['email']" class="mt-2 text-sm text-danger error-message"
+                                id="email-error">Invalid email format.</p>
+                        </div>
                     </div>
                     <div>
                         <label class="sr-only" for="password">Password</label>
-                        <input autocomplete="current-password"
-                            class="appearance-none rounded-none relative block w-full px-3 py-4 border border-gray-300 dark:border-gray-700 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white bg-background-light dark:bg-background-dark rounded-b-lg focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm"
-                            id="password" name="password" placeholder="Password" required="" type="password" />
+                        <div class="relative">
+                            <input autocomplete="current-password" [(ngModel)]="password" #passwordRef="ngModel"
+                                required minlength="8" id="password" name="password" placeholder="Password"
+                                type="password" class="peer block w-full px-3 py-4 border rounded-lg sm:text-sm
+                                            border-gray-300 dark:border-gray-700 
+                                            placeholder-gray-500 dark:placeholder-gray-400 
+                                            text-gray-900 dark:text-white 
+                                            bg-background-light dark:bg-background-dark 
+                                            focus:outline-none focus:ring-primary focus:border-primary" [ngClass]="{
+                                        'border-danger focus:ring-danger focus:border-danger': submitted && passwordRef.invalid
+                                    }" />
+
+                            <div *ngIf="submitted && passwordRef.invalid"
+                                class="absolute inset-y-0 right-0 pr-3 flex items-center hidden peer-invalid:flex pointer-events-none">
+                                <span class="material-symbols-outlined text-danger">error</span>
+                            </div>
+                        </div>
+                        <div *ngIf="submitted && passwordRef.invalid">
+                            <p *ngIf="passwordRef.errors?.['required']" class="mt-2 text-sm text-danger error-message"
+                                id="password-error">Password is Required.</p>
+                            <p *ngIf="passwordRef.errors?.['minlength']" class="mt-2 text-sm text-danger error-message"
+                                id="password-error">Password must be at least 6 characters.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="flex items-center justify-end">
@@ -49,8 +84,8 @@
                 </div>
                 <div>
                     <button
-                        class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
-                        type="submit">
+                        class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:bg-primary/50 disabled:cursor-not-allowed"
+                        id="loginButton" type="submit">
                         Login
                     </button>
                 </div>

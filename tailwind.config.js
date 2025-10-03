@@ -10,6 +10,8 @@ module.exports = {
         primary: "#137fec",
         "background-light": "#f6f7f8",
         "background-dark": "#101922",
+        danger: "#ef4444",
+        success: "#22c55e",
       },
       fontFamily: {
         display: ["Inter", "sans-serif"],

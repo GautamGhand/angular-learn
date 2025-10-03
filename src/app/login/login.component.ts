@@ -1,18 +1,26 @@
-import { CommonModule } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [FormsModule, NgIf,NgClass],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  user = { email: '', password: '' };
+  email:string="";
+  password:string | number="";
+  submitted=false;
 
-  onSubmit(form: any) {
-    console.log(form.value);
+  onSubmit(form: NgForm) {
+    this.submitted=true;
+    if (form.valid) {
+      console.log(this.email,this.password);
+      console.log('Form Submitted!');
+    } else {
+      console.log('Form is invalid');
+    }
   }
 }

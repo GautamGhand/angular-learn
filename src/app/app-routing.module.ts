@@ -11,6 +11,7 @@ import { RoutingComponent } from './routing/routing.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {
@@ -47,12 +48,18 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
+    component:HomeComponent
+    // redirectTo: 'login',
+    // pathMatch: 'full',
   },
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path:'profile',
+    component:ProfileComponent,
+    data:{name:'Peter'}
   },
   {
     path: '**',

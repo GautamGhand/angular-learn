@@ -15,6 +15,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { DynamicroutingComponent } from './dynamicrouting/dynamicrouting.component';
 import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component';
 import { TemplateformsComponent } from './templateforms/templateforms.component';
+import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
   {
@@ -75,6 +76,10 @@ const routes: Routes = [
   {
     path: 'templateforms',
     component: TemplateformsComponent,
+  },
+  {
+    path: 'products',
+    component: ProductsComponent,
   },
   {
     path: '**',

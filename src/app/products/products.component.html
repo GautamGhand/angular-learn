@@ -1,0 +1,11 @@
+
+
+
+<h1>Products Component</h1>
+
+
+<button (click)="getProductsData()">Get Products</button>
+
+@for(product of products;track product){
+    <div>{{product.title}}</div>
+}

@@ -2,13 +2,19 @@
 
 <app-header></app-header>
 
-<app-user [user]="userName"></app-user>
+<!-- <app-user [user]="userName"></app-user>
 
 <select #selectedUser (change)="changeDetails(selectedUser.value)">
     <option value="Anil Sidhu">Anil Sidhu</option>
     <option value="Sam">Sam</option>
     <option value="Peter">Peter</option>
     <option value="Bruce">Bruce</option>
-</select>
+</select> -->
+
+<app-user (getUsers)="handleUsers($event)"></app-user>
+
+@for(user of users;track user){
+    <h1>{{user}}</h1>
+}
 
 <router-outlet></router-outlet>

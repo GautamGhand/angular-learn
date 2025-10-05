@@ -11,7 +11,14 @@ export class AppComponent {
   title = 'angular_lear_complete';
   userName:string='bruce';
 
-  changeDetails(val:string){
-    this.userName=val;
+  // users=['Anil','Sam','Sidhu'];
+
+  users:undefined|string[];
+  // changeDetails(val:string){
+  //   this.userName=val;
+  // }
+
+  handleUsers(users:string[]){
+    this.users=users;
   }
 }

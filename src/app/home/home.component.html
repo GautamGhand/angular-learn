@@ -1,1 +1,17 @@
 <p>home works!</p>
+
+
+<h2>Users</h2>
+
+<table border="1" cellpadding="5">
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td><a routerLink="/dynamicrouting/{{user.id}}/{{user.name}}">{{ user.name }}</a></td>
+        </tr>
+    </tbody>
+</table>

@@ -9,4 +9,9 @@ import { HeaderComponent } from './header/header.component';
 })
 export class AppComponent {
   title = 'angular_lear_complete';
+  userName:string='bruce';
+
+  changeDetails(val:string){
+    this.userName=val;
+  }
 }

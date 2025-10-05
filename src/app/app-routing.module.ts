@@ -12,6 +12,9 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { DynamicroutingComponent } from './dynamicrouting/dynamicrouting.component';
+import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component';
+import { TemplateformsComponent } from './templateforms/templateforms.component';
 
 const routes: Routes = [
   {
@@ -48,7 +51,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    component:HomeComponent
+    component: HomeComponent,
     // redirectTo: 'login',
     // pathMatch: 'full',
   },
@@ -57,9 +60,21 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path:'profile',
-    component:ProfileComponent,
-    data:{name:'Peter'}
+    path: 'profile',
+    component: ProfileComponent,
+    data: { name: 'Peter' },
+  },
+  {
+    path: 'dynamicrouting/:id/:name',
+    component: DynamicroutingComponent,
+  },
+  {
+    path: 'reactiveforms',
+    component: ReactiveformsComponent,
+  },
+  {
+    path: 'templateforms',
+    component: TemplateformsComponent,
   },
   {
     path: '**',

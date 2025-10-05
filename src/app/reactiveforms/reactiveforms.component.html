@@ -1,0 +1,31 @@
+<p>reactiveforms works!</p>
+
+
+<!-- <form method="post" action="">
+    <input type="text" placeholder="Enter Name" [formControl]="name"/>
+    <br>
+    <br>
+    <input type="text" placeholder="Enter Password" [formControl]="password"/>
+    <br><br>
+    <button type="button" (click)="handleSubmit()">Login</button>
+    <button type="button" (click)="setValues()">Set Values In Fields</button>
+</form> -->
+
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" novalidate>
+    <input type="text" placeholder="Enter Name" formControlName="name" />
+    <span *ngIf="submitted && name?.hasError('required')">Name is Required</span>
+    <br>
+    <br>
+    <input type="text" placeholder="Enter Password" formControlName="password" />
+    <span *ngIf="submitted && password?.hasError('required')">Password is Required</span>
+    <span *ngIf="submitted && password?.hasError('minlength')">Minlength is 5 characters</span>
+    <br><br>
+    <input type="text" placeholder="Enter Email" formControlName="email" />
+    <span *ngIf="submitted && email?.hasError('required')">Email is Required</span>
+    <button>Submit</button>
+</form>
+
+<h1>{{this.profileForm.value.name}}</h1>
+<h1>{{this.profileForm.value.password}}</h1>
+<h1>{{this.profileForm.value.email}}</h1>

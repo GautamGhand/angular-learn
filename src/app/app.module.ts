@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { HttpClientModule } from '@angular/common/http';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,11 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     LoginComponent,
     UserComponent,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

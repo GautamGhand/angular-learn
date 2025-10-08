@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -10,13 +10,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DynamicroutingComponent {
   name:null | string="";
-  constructor(private route:ActivatedRoute){
+  constructor(
+    private route:ActivatedRoute,
+    private cb:ChangeDetectorRef
+  ){
 
   }
 
   ngOnInit(){
     this.route.params.subscribe((params)=>{
       this.name=params['name'];
+      this.cb.detectChanges();
     });    
   }
 

@@ -12,11 +12,11 @@ export class DynamicroutingComponent {
   name:null | string="";
   constructor(
     private route:ActivatedRoute,
-    private cb:ChangeDetectorRef
+    private cbr:ChangeDetectorRef
   ){
     this.route.params.subscribe((params)=>{
       this.name=params['name'];
-      this.cb.detectChanges();
+      this.cbr.detectChanges();
     });    
   }
 }

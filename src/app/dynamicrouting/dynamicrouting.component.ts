@@ -14,15 +14,9 @@ export class DynamicroutingComponent {
     private route:ActivatedRoute,
     private cb:ChangeDetectorRef
   ){
-
-  }
-
-  ngOnInit(){
     this.route.params.subscribe((params)=>{
       this.name=params['name'];
       this.cb.detectChanges();
     });    
   }
-
-
 }

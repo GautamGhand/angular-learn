@@ -16,6 +16,7 @@ import { DynamicroutingComponent } from './dynamicrouting/dynamicrouting.compone
 import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component';
 import { TemplateformsComponent } from './templateforms/templateforms.component';
 import { ProductsComponent } from './products/products.component';
+import { authGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -53,6 +54,7 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+    canActivate:[authGuard]
     // redirectTo: 'login',
     // pathMatch: 'full',
   },
